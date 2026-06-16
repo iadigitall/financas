@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(node -e \"require\\('./node_modules/next/package.json'\\)\")",
+      "Bash(npx next *)",
+      "Bash(ls \"c:/Users/SAMSUNG/.claude/projects/c--Users-SAMSUNG-Gastos-pagina/memory/\" 2>/dev/null || echo \"DIR_EMPTY\")",
+      "Read(//c/Users/SAMSUNG/.claude/projects/c--Users-SAMSUNG-Gastos-pagina/**)",
+      "PowerShell(Get-ChildItem \"c:\\\\Users\\\\SAMSUNG\\\\Gastos\\\\pagina\\\\node_modules\\\\.bin\" | Where-Object { $_.Name -eq \"next.cmd\" } | Select-Object Name; Write-Host \"check done\")",
+      "PowerShell(Set-Location \"c:\\\\Users\\\\SAMSUNG\\\\Gastos\\\\pagina\"; $env:npm_config_loglevel = \"error\"; npm install --prefer-offline 2>&1; Write-Host \"EXIT: $LASTEXITCODE\")",
+      "Skill(run)",
+      "Skill(run:*)",
+      "PowerShell(Set-Location \"c:\\\\Users\\\\SAMSUNG\\\\Gastos\\\\pagina\"; Start-Process -NoNewWindow -FilePath \"npm\" -ArgumentList \"run\", \"dev\" -RedirectStandardOutput \"$env:TEMP\\\\nextdev.log\" -RedirectStandardError \"$env:TEMP\\\\nextdev-err.log\"; Start-Sleep -Seconds 8; Get-Content \"$env:TEMP\\\\nextdev.log\" -ErrorAction SilentlyContinue; Get-Content \"$env:TEMP\\\\nextdev-err.log\" -ErrorAction SilentlyContinue)",
+      "PowerShell(Set-Location \"c:\\\\Users\\\\SAMSUNG\\\\Gastos\\\\pagina\"; Start-Process -NoNewWindow -FilePath \"npm.cmd\" -ArgumentList \"run\", \"dev\" -RedirectStandardOutput \"$env:TEMP\\\\nextdev.log\" -RedirectStandardError \"$env:TEMP\\\\nextdev-err.log\"; Start-Sleep -Seconds 10; Get-Content \"$env:TEMP\\\\nextdev.log\" -ErrorAction SilentlyContinue; Get-Content \"$env:TEMP\\\\nextdev-err.log\" -ErrorAction SilentlyContinue)",
+      "Read(//c/Users/SAMSUNG/Gastos/**)"
+    ]
+  }
+}
