@@ -82,10 +82,7 @@ export default function WhatsApp() {
             {/* header do chat */}
             <div className="wa-header">
               <div className="wa-avatar">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="12" y1="1" x2="12" y2="23"/>
-                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-                </svg>
+                <img src="/favicon.svg" alt="Finanças" width="38" height="38" style={{borderRadius:'50%', display:'block'}} />
               </div>
               <div className="wa-header-info">
                 <p className="wa-name">Finanças</p>
