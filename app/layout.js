@@ -19,6 +19,12 @@ export default function RootLayout({ children }) {
     <html lang="pt-BR" className={inter.variable}>
       <body>
         <LenisProvider>{children}</LenisProvider>
+        <Script
+          src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+          data-utmify-prevent-xcod-sck=""
+          data-utmify-prevent-subids=""
+          strategy="afterInteractive"
+        />
         <Script id="utmify-pixel" strategy="afterInteractive">{`
           window.pixelId = "6a5128270563e1f64c6e5fa3";
           var a = document.createElement("script");
