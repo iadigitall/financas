@@ -70,6 +70,22 @@ export default function Hero() {
     return () => window.removeEventListener('mousemove', h)
   }, [])
 
+  // Parallax no scroll — título desce devagar, phone sobe
+  useEffect(() => {
+    const st1 = ScrollTrigger.create({
+      trigger: '.hero-section',
+      start: 'top top',
+      end: 'bottom top',
+      scrub: true,
+      onUpdate: self => {
+        const p = self.progress
+        gsap.set(titleRef.current, { y: p * 70 })
+        gsap.set(rightRef.current, { y: p * -50 })
+      },
+    })
+    return () => st1.kill()
+  }, [])
+
   // Scroll indicator some ao descer
   useEffect(() => {
     const indicator = indicatorRef.current
@@ -102,34 +118,29 @@ export default function Hero() {
 
           <h1 ref={titleRef} className="hero-title">
             <span className="title-line">
-              {['Você', 'não', 'está'].map(w => (
+              {['Sabe', 'onde', 'foi'].map(w => (
                 <span key={w} className="word-wrap">
                   <span className="word">{w}</span>{' '}
                 </span>
               ))}
             </span>
             <span className="title-line">
-              {['quebrado.', 'Você'].map(w => (
+              {['o', 'seu', 'dinheiro'].map(w => (
                 <span key={w} className="word-wrap">
                   <span className="word">{w}</span>{' '}
                 </span>
               ))}
             </span>
             <span className="title-line">
-              {['está', 'no'].map(w => (
-                <span key={w} className="word-wrap">
-                  <span className="word">{w}</span>{' '}
-                </span>
-              ))}
               <span className="word-wrap">
-                <span className="word hero-accent">escuro.</span>
+                <span className="word hero-accent">este mês?</span>
               </span>
             </span>
           </h1>
 
           <p ref={subRef} className="hero-sub">
-            O Finanças acende a luz. Você vê exatamente onde vai
-            cada real do seu salário. E a partir daí, você decide o que muda.
+            O Finanças mostra para onde vai cada real do seu salário —
+            categoria por categoria, em tempo real.
           </p>
 
           <a ref={ctaRef} href="#assinar" className="btn-cta">
