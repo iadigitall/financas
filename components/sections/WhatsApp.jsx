@@ -46,7 +46,7 @@ export default function WhatsApp() {
               </div>
               <div>
                 <p className="whats-feat-title">Linguagem natural</p>
-                <p className="whats-feat-desc">"Gastei 50 no almoço" — ele entende e salva.</p>
+                <p className="whats-feat-desc">&quot;Gastei 50 no almoço&quot; — ele entende e salva.</p>
               </div>
             </div>
 
@@ -58,7 +58,7 @@ export default function WhatsApp() {
               </div>
               <div>
                 <p className="whats-feat-title">Resumo do mês</p>
-                <p className="whats-feat-desc">Digite "resumo" e veja gastos, contas e limite.</p>
+                <p className="whats-feat-desc">Digite &quot;resumo&quot; e veja gastos, contas e limite.</p>
               </div>
             </div>
 
@@ -70,7 +70,7 @@ export default function WhatsApp() {
               </div>
               <div>
                 <p className="whats-feat-title">Contas pendentes</p>
-                <p className="whats-feat-desc">Digite "contas" e veja o que ainda não foi pago.</p>
+                <p className="whats-feat-desc">Digite &quot;contas&quot; e veja o que ainda não foi pago.</p>
               </div>
             </div>
           </div>
@@ -103,9 +103,9 @@ export default function WhatsApp() {
               <div className="wa-msg wa-msg--bot">
                 <p>Olá, <strong>Gustavo!</strong> 👋 Sou seu assistente financeiro.</p>
                 <p style={{marginTop:'8px'}}>Pode me falar naturalmente:</p>
-                <p style={{marginTop:'6px', color:'rgba(255,255,255,0.65)', fontStyle:'italic', fontSize:'13px'}}>"gastei 50 no almoço"</p>
-                <p style={{color:'rgba(255,255,255,0.65)', fontStyle:'italic', fontSize:'13px'}}>"paguei 30 de uber"</p>
-                <p style={{color:'rgba(255,255,255,0.65)', fontStyle:'italic', fontSize:'13px'}}>"deu 89 na farmácia"</p>
+                <p style={{marginTop:'6px', color:'rgba(255,255,255,0.65)', fontStyle:'italic', fontSize:'13px'}}>&quot;gastei 50 no almoço&quot;</p>
+                <p style={{color:'rgba(255,255,255,0.65)', fontStyle:'italic', fontSize:'13px'}}>&quot;paguei 30 de uber&quot;</p>
+                <p style={{color:'rgba(255,255,255,0.65)', fontStyle:'italic', fontSize:'13px'}}>&quot;deu 89 na farmácia&quot;</p>
                 <span className="wa-time">18:25</span>
               </div>
 
