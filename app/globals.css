@@ -131,7 +131,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .spl-bar {
   height: 1.5px; width: 0;
   background: linear-gradient(90deg, transparent 0%, #A3FF47 40%, #A3FF47 60%, transparent 100%);
-  border-radius: 2px; margin-bottom: 14px;
+  border-radius: 2px; margin: 0 auto 14px;
   animation: splBarSweep 0.8s 3.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 @keyframes splBarSweep { to { width: 160px; } }
@@ -799,49 +799,75 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 /* ═══════════════════════════════════════════════════════════ */
-/* FUNCIONALIDADES — split editorial                           */
+/* FUNCIONALIDADES — sticky phone layout                       */
 /* ═══════════════════════════════════════════════════════════ */
-.func-editorial {
-  display: flex; align-items: center; gap: 80px;
+.func-sticky-section { overflow: visible; }
+.func-sticky-wrap {
   max-width: 1180px; margin: 0 auto; padding: 0 32px;
 }
-.func-text { flex: 1; }
-.func-cards {
-  display: flex; flex-direction: column; gap: 20px; margin-top: 32px;
+.func-sticky-head {
+  max-width: 680px; margin: 0 auto 64px; text-align: center;
 }
-.func-card {
-  display: flex; align-items: flex-start; gap: 16px;
-  padding: 16px 20px;
+.func-sticky-body {
+  display: flex; align-items: flex-start; gap: 72px;
+}
+
+/* Coluna esquerda — cards */
+.func-sticky-cards {
+  flex: 1; display: flex; flex-direction: column; gap: 24px;
+  padding-bottom: 30vh;
+}
+.func-sticky-card {
+  padding: 28px 32px;
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 16px; will-change: transform;
-  transition: border-color 0.3s, background 0.3s;
+  border-radius: 20px;
+  transition: border-color 0.4s, background 0.4s;
+  will-change: transform;
+  cursor: default;
 }
-.func-card:hover { border-color: rgba(163,255,71,0.15); background: rgba(163,255,71,0.03); }
-.func-card-thumb {
-  width: 52px; height: 52px; flex-shrink: 0;
-  border-radius: 12px; overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.1);
-  background: #1a1a1a;
+.func-sticky-card.active {
+  border-color: rgba(163,255,71,0.3);
+  background: rgba(163,255,71,0.04);
 }
-.func-card-img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
-.func-img-wrap {
-  flex: 0 0 380px; position: relative;
-  display: flex; flex-direction: column; gap: 16px;
-  align-items: center;
+.func-sticky-num {
+  display: inline-block;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+  color: rgba(163,255,71,0.6); margin-bottom: 10px;
+  font-family: var(--font-mono, monospace);
 }
-.func-screenshot {
-  width: 200px; border-radius: 28px;
-  border: 1px solid rgba(255,255,255,0.1);
-  box-shadow: 0 30px 80px rgba(0,0,0,0.7);
+.feat-title { font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 10px; }
+.feat-desc  { font-size: 15px; line-height: 1.65; color: rgba(255,255,255,0.6); margin: 0; }
+
+/* Coluna direita — phone sticky */
+.func-sticky-phone {
+  flex: 0 0 300px;
+  position: sticky;
+  top: calc(50vh - 300px);
+  align-self: flex-start;
+}
+.func-phone-frame {
+  width: 260px; height: 540px;
+  background: #0d0d0d;
+  border: 2px solid rgba(255,255,255,0.12);
+  border-radius: 44px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.04), inset 0 0 0 1px rgba(255,255,255,0.06);
+}
+.func-phone-notch {
+  position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
+  width: 90px; height: 28px;
+  background: #0d0d0d;
+  border-radius: 20px;
+  z-index: 2;
+  border: 1.5px solid rgba(255,255,255,0.08);
+}
+.func-phone-img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: top center;
   display: block;
-}
-.func-screenshot--offset {
-  margin-left: 60px;
-  margin-top: -60px;
-  position: relative; z-index: 1;
-  border-color: rgba(163,255,71,0.2);
-  box-shadow: 0 30px 80px rgba(0,0,0,0.7), 0 0 40px rgba(163,255,71,0.08);
+  will-change: transform;
 }
 
 /* ═══════════════════════════════════════════════════════════ */
@@ -1070,6 +1096,128 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .gr-total-sub { font-size: 14px; color: #A3FF47; margin-top: 4px; }
 
 /* ═══════════════════════════════════════════════════════════ */
+/* WHATSAPP SECTION                                            */
+/* ═══════════════════════════════════════════════════════════ */
+.whats-section { background: #0D0D0D; }
+
+.whats-editorial {
+  display: flex; align-items: center; gap: 80px;
+  max-width: 1180px; margin: 0 auto; padding: 0 32px;
+}
+
+.whats-text { flex: 1; }
+
+.whats-sub {
+  font-size: 17px; line-height: 1.7;
+  color: rgba(255,255,255,0.55);
+  max-width: 480px; margin: 20px 0 36px;
+}
+
+.whats-features { display: flex; flex-direction: column; gap: 20px; }
+.whats-feat {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.whats-feat:last-child { border-bottom: none; padding-bottom: 0; }
+.whats-feat-icon {
+  width: 36px; height: 36px; flex-shrink: 0;
+  background: rgba(163,255,71,0.08);
+  border: 1px solid rgba(163,255,71,0.15);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  color: #A3FF47; margin-top: 2px;
+}
+.whats-feat-title { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 3px; }
+.whats-feat-desc  { font-size: 14px; color: rgba(255,255,255,0.45); line-height: 1.5; }
+
+/* phone + chat */
+.whats-phone-wrap {
+  flex: 0 0 340px;
+  display: flex; justify-content: center;
+}
+
+.whats-phone {
+  width: 340px;
+  background: #111b21;
+  border-radius: 24px;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 32px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.04);
+  overflow: hidden;
+  display: flex; flex-direction: column;
+}
+
+/* header do chat */
+.wa-header {
+  display: flex; align-items: center; gap: 10px;
+  background: #202c33;
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.wa-avatar {
+  width: 38px; height: 38px; border-radius: 50%;
+  background: #A3FF47;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.wa-avatar svg { color: #0a1400; }
+.wa-header-info { flex: 1; }
+.wa-name   { font-size: 15px; font-weight: 700; color: #e9edef; }
+.wa-status { font-size: 12px; color: #8696a0; }
+.wa-header-icons { color: #8696a0; }
+
+/* área de mensagens */
+.wa-chat {
+  flex: 1; padding: 12px 10px;
+  display: flex; flex-direction: column; gap: 6px;
+  overflow-y: auto; max-height: 520px;
+  background: #0d1418;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.015'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.wa-msg {
+  max-width: 88%; padding: 9px 12px 22px;
+  border-radius: 10px;
+  font-size: 13.5px; line-height: 1.5;
+  position: relative; word-break: break-word;
+}
+.wa-msg--bot {
+  background: #202c33; color: #e9edef;
+  border-bottom-left-radius: 2px;
+  align-self: flex-start;
+}
+.wa-msg--user {
+  background: #005c4b; color: #e9edef;
+  border-bottom-right-radius: 2px;
+  align-self: flex-end;
+}
+.wa-time {
+  position: absolute; bottom: 5px; right: 10px;
+  font-size: 10.5px; color: #8696a0;
+  white-space: nowrap;
+}
+.wa-tick { color: #53bdeb; margin-left: 3px; }
+
+/* input bar */
+.wa-input-bar {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 10px;
+  background: #202c33;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+.wa-input-field {
+  flex: 1; background: #2a3942; border-radius: 20px;
+  padding: 10px 16px; font-size: 13px;
+  color: rgba(255,255,255,0.35);
+}
+.wa-send {
+  width: 38px; height: 38px; border-radius: 50%;
+  background: #00a884;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
 @media (max-width: 900px) {
   .editorial-section {
     flex-direction: column !important;
@@ -1125,14 +1273,20 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .plano-card { padding: 32px 24px; }
   .plano-price { font-size: 64px; }
   /* Funcionalidades mobile */
-  .func-editorial { flex-direction: column; padding: 0 24px; gap: 48px; }
-  .func-img-wrap { flex: none; width: 100%; justify-content: center; }
-  .func-screenshot { width: 160px; }
-  .func-screenshot--offset { margin-left: 40px; margin-top: -40px; }
+  .func-sticky-wrap { padding: 0 20px; }
+  .func-sticky-head { margin-bottom: 40px; }
+  .func-sticky-body { flex-direction: column; gap: 40px; }
+  .func-sticky-phone { display: none; }
+  .func-sticky-cards { padding-bottom: 0; }
   /* Diferenciais mobile */
   .diff-editorial { flex-direction: column; padding: 0 24px; gap: 40px; }
   .diff-img-wrap { flex: none; width: 100%; max-height: 360px; }
   .diff-img { min-height: 0; }
   /* Problema mobile */
   .problema-img-wrap { border-radius: 16px; }
+  /* WhatsApp mobile */
+  .whats-editorial { flex-direction: column; padding: 0 24px; gap: 40px; }
+  .whats-phone-wrap { width: 100%; }
+  .whats-phone { width: 100%; }
+  .whats-sub { max-width: 100%; }
 }

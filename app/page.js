@@ -8,6 +8,7 @@ import ComoFunciona      from '@/components/sections/ComoFunciona'
 import CinematicPin      from '@/components/sections/CinematicPin'
 import Funcionalidades   from '@/components/sections/Funcionalidades'
 import Diferenciais      from '@/components/sections/Diferenciais'
+import WhatsApp          from '@/components/sections/WhatsApp'
 import ProvaVisual       from '@/components/sections/ProvaVisual'
 import Plano             from '@/components/sections/Plano'
 import FAQ               from '@/components/sections/FAQ'
@@ -26,6 +27,7 @@ export default function Page() {
       <CinematicPin />
       <Funcionalidades />
       <Diferenciais />
+      <WhatsApp />
       <ProvaVisual />
       <Plano />
       <FAQ />
